@@ -1,0 +1,85 @@
+# Home Assistant Add-on Configuration
+# https://developers.home-assistant.io/docs/add-ons/configuration
+name: "Franzl Gateway"
+description: "Franzl Energie-Management — Optimiert PV, Batterie, Wallbox, Wärmepumpe"
+version: "1.2.97"
+slug: "energy_gateway"
+url: "https://github.com/franzdinhobl/franzl-addons"
+# Prebuilt image: Home Assistant PULLS this from ghcr.io instead of building the
+# Dockerfile locally on the user's device (faster + reliable install, and this
+# source repo can stay private). {arch} is substituted by the Supervisor.
+# The images are produced by .github/workflows/build-addon.yml.
+# Dockerfile + build.yaml remain ONLY for local dev (build.sh) and CI.
+image: "ghcr.io/franzdinhobl/{arch}-franzl-gateway"
+arch:
+  - aarch64
+  - amd64
+homeassistant: "2024.1.0"
+# REQUIRED: grants access to the Home Assistant Core API via the Supervisor
+# proxy (http://supervisor/core/api/*) using SUPERVISOR_TOKEN. Without this the
+# proxy returns 401 and the gateway cannot read HA entities — device discovery
+# and all live energy data silently fail.
+homeassistant_api: true
+# Grants access to the Supervisor API (http://supervisor/*). Needed to read the
+# HOST's LAN IP (GET /network/info) so the "search the network" native-device
+# scan can seed its /24 sweep — the add-on container sits on the docker bridge
+# (172.30.x), so it can't learn the real LAN subnet any other way.
+hassio_api: true
+# Supervisor role for managing the platform: trigger HA Core / HA OS updates and
+# reload the add-on store. `manager` is the verified MINIMUM for /core/update,
+# /os/update and /store/* (Supervisor security middleware) — NOT admin (least
+# privilege). The add-on's own auto_update self-enroll already works at the
+# default role; this is only for driving HA's own updates. See spec 31 §2.1.
+hassio_role: manager
+# MUST be false: the HA base images bundle s6-overlay v3, whose /init must run
+# as PID 1. With init:true Docker inserts its own init as PID 1 and s6 aborts
+# with "s6-overlay-suexec: fatal: can only run as pid 1".
+init: false
+map:
+  - config:rw
+  - share:rw
+  - addon_config:rw
+ports:
+  8099/tcp: 8099
+ports_description:
+  8099/tcp: "Energy Gateway API + WebSocket"
+options:
+  log_level: "info"
+  # Empty = use the bundled, in-container PostgreSQL (zero-config, recommended).
+  # Set a full SQLAlchemy/asyncpg URL only to use an external database instead.
+  db_url: ""
+  activation_url: "https://europe-west1-franzl-energy.cloudfunctions.net"
+schema:
+  log_level: "list(debug|info|warning|error)"
+  db_url: "str?"
+  activation_url: "url?"
+environment:
+  GATEWAY_PORT: "8099"
+  # Mathematischer Optimierer (MILP/HiGHS, spec 28 §3) aktiv. Fällt bei
+  # Infeasibilität/Solver-Fehler automatisch auf die regelbasierte Engine zurück.
+  GATEWAY_MILP: "1"
+startup: "application"
+# Hot backup: the add-on keeps running. The raw PostgreSQL cluster files
+# (/data/postgres) would be inconsistent in a hot backup, so they are
+# excluded — instead backup-pre.sh writes a consistent pg_dump to
+# /data/backup/ which init-db restores automatically on a fresh cluster.
+# Local daily rotation dumps (/data/backups) are excluded too (redundant).
+#
+# token_secret is the Fernet key that decrypts stored vendor credentials
+# (VW portal password, Tesla refresh tokens in vehicles.api_credentials_enc /
+# api_*_token_enc). It is EXCLUDED so a backup archive carries only ciphertext —
+# a leaked/copied backup cannot decrypt anyone's car passwords. Consequence: a
+# backup restored onto a *fresh* box regenerates the key, so the encrypted blobs
+# no longer decrypt and the affected cars must be re-linked once (handled
+# gracefully: crypto callers treat an undecryptable blob as "needs re-link").
+backup: hot
+backup_pre: /usr/local/bin/backup-pre.sh
+backup_post: /usr/local/bin/backup-post.sh
+backup_exclude:
+  - "postgres/**"
+  - "backups/**"
+  - "token_secret"
+ingress: true
+ingress_port: 8099
+panel_icon: "mdi:solar-power-variant"
+panel_title: "Franzl"
