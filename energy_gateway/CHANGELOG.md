@@ -1,3 +1,26 @@
+## 1.8.3
+
+**Das Auto steht nicht immer an deiner Wallbox — und darf nur dann für sie
+einstehen.** Seit 1.8.1 springt bei einer nicht erreichbaren Wallbox das Auto
+mit seinen eigenen Meldungen ein: Ladekabel, Ladezustand, Ladeleistung. Die
+beschreiben aber das Auto, nicht deine Wallbox. Lädt es gerade woanders — beim
+Arbeitgeber, an einer öffentlichen Säule —, meldet es genau dasselbe, und
+Franzl hätte eine fremde Ladung als deine angezeigt und im schlimmsten Fall
+sogar hineingeregelt. Ab jetzt fragt er zuerst, ob das Auto zu Hause ist: Home
+Assistant vergleicht die Position mit deiner Zone und sagt „home" oder nicht,
+wir sehen dabei keine Koordinate. Ist es nachweislich woanders, gilt es als
+unbekannt — die Wallbox bleibt bei ihrer eigenen Auskunft. Autos ohne
+Standort-Meldung verhalten sich unverändert.
+
+**Und Franzl kann eine Ladung jetzt auch über das Auto STARTEN.** Bisher konnte
+er bei toter Wallbox nur bremsen oder stoppen, weil wir annahmen, nur die Box
+könne eine Ladung eröffnen. Sie kann es nicht allein: hängt das Kabel und
+bietet die Box noch Strom an, ist der Schalter im Auto das einzige geschlossene
+Tor. Franzl macht ihn jetzt auf — aber nur, wenn das Auto zu Hause ist und wir
+seine Ladestärke selbst regeln können. Ohne diesen eigenen Regler bleibt es
+beim Bremsen: eine Ladung zu starten, die wir nicht drosseln können, würde in
+„Nur Sonne" Netzstrom kaufen.
+
 ## 1.8.2
 
 **Unverändert heißt nicht unbekannt — und ein toter Zähler darf keine Null
