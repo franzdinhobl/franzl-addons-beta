@@ -1,3 +1,21 @@
+## 1.8.2
+
+**Unverändert heißt nicht unbekannt — und ein toter Zähler darf keine Null
+behaupten.** Wenn die Wallbox nicht erreichbar ist, ist das Auto die einzige
+Quelle, die noch misst. Franzl hat diese Messung bisher verworfen, sobald der
+zugehörige Wert eine Weile unverändert war: die offizielle Tesla-Integration
+schreibt einen Wert nur, wenn er sich ändert, also stand "lädt" seit Stunden
+still, während der Ladestand desselben Autos jede Minute frisch ankam. Über das
+Auto gelesen heißt das schlicht: unverändert. Gemessen wird jetzt der Kontakt
+zum Auto — hören wir von ihm, gelten seine letzten Werte; schläft es, verfallen
+sie wie bisher alle zusammen.
+
+Dadurch zeigt die Karte bei toter Wallbox endlich, was wirklich fließt: statt
+"Bereit · 0,0 kW" über einem ladenden Auto steht dort die Leistung, die das
+Auto selbst meldet, samt passendem Ladestrom und Zustandswort. Auch der
+Verlauf nach dem Neuverbinden und das Lernen typischer Ladevorgänge rechnen
+mit dieser Zahl, statt den Ausfall als Ladung ohne Energie zu protokollieren.
+
 ## 1.8.1
 
 **Eine nicht erreichbare Wallbox darf nicht behaupten, das Auto sei weg.** Verliert
