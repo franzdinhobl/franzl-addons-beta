@@ -1,3 +1,175 @@
+## 1.11.0
+
+**Der Legionellen-Lauf richtet sich nach deinem Speicher, nicht mehr nach dem
+Kalender.** Bisher lief er jeden Montag um drei Uhr früh aus dem Netz. Jetzt ist
+er fällig, wenn seit der letzten Desinfektion dein Intervall vergangen ist — und
+als Desinfektion zählt jede gemessene 60-°C-Phase, egal wer geheizt hat. In den
+Tagen davor nehme ich die Sonne: reicht der Überschuss und trägt die Prognose
+den ganzen Lauf, starte ich ihn am Nachmittag statt in der Nacht. Klappt das
+nicht, läuft er am Fälligkeitstag in der günstigsten Nachtstunde. In der
+Simulation hat das den Netzstrom für diese Läufe halbiert, ohne dass je mehr als
+dein Intervall dazwischen lag. Wie oft und ab wann ich die Sonne nutzen darf,
+stellst du mit dem nächsten App-Update selbst ein; bis dahin gelten sieben Tage
+und zwei Tage Vorlauf.
+
+**Wenn Tibber dein Auto lädt, zahlt dein Hausspeicher nicht mehr mit.** Hast du
+„Beim Schnellladen: Speicher halten" eingeschaltet, galt das bisher nur, wenn du
+selbst „Jetzt laden" getippt hast. Lud Tibber das Auto in einer
+Grid-Rewards-Session, hielt niemand den Speicher, und er hat sich ins Auto
+entladen. Derselbe Schalter gilt jetzt für beides. Ist er aus, bleibt alles wie
+bisher.
+
+**Ich merke mir, wann dein Speicher zuletzt voll war.** Das steht künftig auf
+der Speicher-Karte. Für Speicher, die ich aus dem Netz laden kann, gibt es dazu
+eine neue Einstellung: eine Vollladung spätestens alle paar Wochen. Ich warte
+dafür zuerst auf einen sonnigen Tag, der den Speicher von selbst füllt. Erst
+wenn der bis zur Frist ausbleibt, lade ich nachts zur günstigsten Stunde nach.
+Die Einstellung ist aus, bis du sie einschaltest, und kommt mit dem nächsten
+App-Update. Ob dein Speicher danach seine eigene Pflegeladung auslässt, weiß ich
+nicht — das hängt vom Hersteller ab.
+
+**Ein zweiter Fühler am Pufferspeicher.** Du kannst unter „Geräte-Zuordnung
+prüfen" einen zweiten Temperaturfühler zuordnen, etwa unten im Speicher. Ich
+zeige ihn an und beobachte, wie weit oben und unten auseinanderliegen. Meine
+Entscheidungen treffe ich weiter nach dem oberen Fühler, denn das ist das Wasser,
+das bei dir ankommt.
+
+## 1.10.3
+
+**Für deinen Komfort verlasse ich mich nicht mehr auf die Wettervorhersage.**
+Wenn dein Warmwasserspeicher oder deine Heizung eine Untergrenze hat, die ich
+halten soll, habe ich sonnige Stunden bisher schon als erledigt verbucht, bevor
+die Sonne überhaupt da war — und in der billigen Nacht davor entsprechend nichts
+eingekauft. Blieb die Sonne dann aus, war der Speicher zu kalt, und nachheizen
+musste ich zur teuersten Zeit. Ab jetzt kaufe ich die günstige Stunde, die deine
+Zusage braucht. Scheint die Sonne, kostet mich dieselbe Stunde ohnehin nichts —
+ich muss sie mir vorher nicht gutschreiben. Gemessen über sechs Tage und vier
+Wetterverläufe: nur noch gut ein Drittel der Minuten unter deiner
+Wunschtemperatur, und dabei rund drei Euro weniger auf der Rechnung, bei genau
+derselben gelieferten Wärme.
+
+**Und ein Nur-Sonne-Fenster bleibt wirklich eins.** Hast du für eine Zeit „nur
+Überschuss" eingestellt und direkt danach beginnt ein Fenster mit Untergrenze,
+habe ich diese Untergrenze eine Stunde zu früh angesetzt — mitten in dein
+Sonnen-Fenster hinein, in dem ich gar keinen Strom kaufen darf. Erfüllen konnte
+ich sie dort nicht, melden schon. Jetzt gilt sie ab der Stunde, in der ich sie
+auch einlösen darf.
+
+## 1.10.2
+
+**Ein Häkchen bedeutet wieder, dass etwas passiert ist.** Wenn du für deinen
+Heizstab oder deine Wärmepumpe Leistungsstufen eingetragen hast — also die
+Stufen, die das Gerät wirklich fahren kann —, dann habe ich manchmal weniger
+angefordert, als die kleinste Stufe hergibt. Das Gerät bleibt dann aus, richtig
+so, denn eine Stufe höher hätte Netzstrom gekauft. Nur habe ich die Stunde
+danach als erledigt abgehakt und dazu „Heizt auf Vorrat" geschrieben. Ab jetzt
+plane ich von vornherein nur Mengen, die dein Gerät liefern kann. Und falls es
+doch einmal nicht geht, sage ich es und nenne die Grenze: „Ich wollte deinen
+Warmwasserspeicher sanfter laufen lassen, als er kann — unter 1,0 kW geht bei
+ihm nichts, also blieb er aus." Wer keine Stufen eingetragen hat, merkt keinen
+Unterschied.
+
+**Deinen Hausanschluss halte ich jetzt wirklich ein — wenn du ihn mir gesagt
+hast.** Bei mehreren Klimageräten oder Splits an einem Anschluss habe ich zwar
+gerechnet und gedrosselt, aber ein Klimagerät nimmt eine halbe Leistung gar
+nicht an: es läuft oder es läuft nicht. Meine Drosselung stand also nur auf dem
+Papier, und meistens habe ich nicht einmal gemerkt, dass ich über der Grenze
+war. Jetzt rechne ich mit dem, was wirklich fließt, und schalte ein Gerät ganz
+ab statt es halb zu drosseln — und zwar das Zimmer mit dem meisten Puffer, das
+also am längsten warm bleibt. Das gilt nur, wenn du deinen Hausanschluss
+eingetragen hast; auf eine Zahl, die ich bloß annehme, greife ich nicht härter
+ein. Der Tagesplan sagt, welches Gerät es war und warum.
+
+**Wenn die Sonne nicht für die kleinste Stufe reicht, sage ich das.** Zieht
+eine Wolke durch, halte ich ein laufendes Gerät kurz weiter, statt es
+flattern zu lassen — bei einem Gerät mit Stufen habe ich dabei manchmal 0 W
+angefordert und trotzdem „Ich heize dein Wasser mit 1,0 kW Sonne" geschrieben.
+Jetzt halte ich es auf seiner kleinsten Stufe, also mit dem wenigsten Netz, das
+es kann, und die Zeile sagt es: „Die Sonne reicht nicht für die kleinste Stufe —
+ich halte 1,0 kW (teils Netz)."
+
+**Kleineres.** Mein Plan verspricht nichts mehr, was der Anschluss nicht
+trägt — vorher konnte der Tagesplan bei mehreren Klimageräten mehr zusagen, als
+gleichzeitig möglich ist. Ein abgeschaltetes Gerät heißt jetzt „abgeschaltet"
+statt „gedrosselt", und diese Zeile gibt es auch auf Englisch (vorher stand
+dort für englische Haushalte Deutsch). Hast du deinen Hausanschluss nicht
+eingetragen, sagt sie außerdem, dass ich mit einer Annahme rechne.
+
+## 1.10.1
+
+**Beim Schnellladen halte ich deinen Speicher jetzt überall, wo er es annimmt.**
+Der Schalter „Beim Schnellladen: Speicher halten" wirkte nur bei Speichern, die
+ich direkt anspreche. Nimmt dein Speicher das Halten über einen
+Home-Assistant-Dienst an — zum Beispiel ein E3DC —, dann stand der Schalter da,
+ließ sich einschalten, und ich habe trotzdem nichts gehalten, während die Karte
+„Solange ich halte, regelt dein Speicher nicht selbst" versprach. Jetzt frage
+ich an derselben Stelle nach, an der auch die Planung nachfragt, und halte dann
+wirklich. Wer den Schalter aus hat, merkt keinen Unterschied.
+
+**Kleineres.** Für Autos ohne eigenen Ladestand gab es einen halb gebauten
+Schätzwert: man konnte einen Startwert eintragen, und ich sollte ihn mit der
+geladenen Energie hochrechnen. Gerechnet habe ich nie — der Wert blieb stehen,
+wo er eingetragen wurde, während die Anzeige ihm mit der Zeit immer weniger
+Gewissheit zusprach. Diese halbe Funktion ist entfernt. Für ein Auto ohne
+Ladestand plane ich weiterhin in Kilowattstunden und nach Abfahrtszeit, und wenn
+ein vorhandener Sensor stehen bleibt, rechne ich den Stand aus der geladenen
+Energie hoch. Schon eingetragene Startwerte bleiben gespeichert.
+
+## 1.10.0
+
+**Was du einstellst, wird dort gespeichert, wo du es einstellst.** Das
+Geräte-Detail ist über Monate Karte um Karte gewachsen, und zusammen ergab das
+Widersprüche: ein Speichern-Knopf stand frei zwischen zwei Karten, obwohl unter
+ihm noch fünf folgten, die sich alle sofort selbst speichern — man musste
+raten, wofür er gilt. „Fahrzeug" und „Standard-Auto" waren zwei Karten
+direkt untereinander, ohne dass jemand sagen konnte, worin sie sich
+unterscheiden. Jetzt sitzt Speichern in der Karte, die es speichert; das Auto
+hat eine Karte; Verknüpfung lösen und Fahrzeug entfernen liegen im Menü statt
+als rote Zeile neben dem Verknüpfen-Knopf. Lange Regler-Beschriftungen brechen
+nicht mehr mitten im Wort um, und die Korrekturen („Stimmt etwas nicht?")
+stehen als eigener Abschnitt unten, mitsamt dem Vorzeichen-Flip des Speichers.
+
+**Deine Klimaanlage sagt jetzt, worauf sie zielt.** Der Zielbereich stand nur
+klein im Zeitplan-Balken; ein frisch angelegtes Klimagerät hatte dafür gar kein
+Bedienelement, obwohl genau das der häufigste Fall ist. Neu ist die Karte
+„Zieltemperatur". Legst du Zeiten fest, tritt sie zurück und verweist nach
+unten — es bleibt bei einem Ort für Zeiten. Kenne ich den geltenden Bereich
+nicht, zeige ich keinen Regler, statt eine Vermutung hinzustellen, die dein
+erster Zug zur Antwort machen würde.
+
+**Die Filterpumpe läuft, wenn die Sonne da ist — nicht, wenn die Uhr es sagt.**
+Innerhalb der Sonnenstunden kosten alle Stunden dasselbe, und genau dort
+entschied bisher eine Hilfsregel nach der Uhrzeit: die Pumpe lief die
+aufsteigende Flanke des Vormittags, wo eine Wolke den Überschuss wegnimmt,
+während die dicken Mittagsstunden frei blieben. In einem Haushalt, der
+einspeist, war sie damit teurer als eine dumme Zeitschaltuhr. Jetzt entscheidet
+der erwartete Überschuss — bei identischer Energie und identisch gehaltener
+Laufzeit-Garantie, und in beiden Planern gleich.
+
+**Fährt deine sonnenBatterie ihre Batteriepflege, halte ich mich raus.** sonnen
+lädt den Speicher periodisch voll durch, um den Ladestand zu kalibrieren und
+die Zellen auszugleichen. Dagegen zu steuern verlängert das nur; ich erkenne es
+jetzt am Gerät und lasse ihm den Vortritt. Meldet dein Speicher das Feld nicht,
+ändert sich nichts.
+
+**Nach einem Neustart wartet nichts mehr ohne Grund.** Mehrere interne Sperren
+rechneten „zuletzt getan" ab dem Systemstart statt ab dem letzten Mal. Auf
+einer gerade gestarteten Box unterdrückte das die jeweils ERSTE Handlung, je
+nach Sperre bis zu sechs Stunden — betroffen waren unter anderem das Anstupsen
+eines schlafenden Autos, das Aufräumen eines blockierten Ladeprofils, das
+Stundenbudget der Wärmepumpen-Schaltungen und die Reparatur der
+VW-Datenabfrage.
+
+**Kleineres.** Der Installer fragt die Home-Assistant-Kontextfelder jetzt selbst
+(go-e-Ladename), und eine zweite Box macht die Frage für die erste sofort
+sichtbar statt erst beim nächsten Verbinden. Fehlen die Börsenpreise für morgen,
+trägt auch die Ersatz-Planung Wärme über das Rasterende hinaus, statt am
+letzten bekannten Preis abzubrechen. Ein Raum, der abends von selbst wärmer
+wird, verdirbt der Wärmepumpe nicht mehr die gelernte Auskühlrate. Und wer im
+Haushalt keine Verwaltungsrechte hat, sieht bei „Leistung", „Elektrischer
+Anschluss" und „Phasen" die Angabe als Text statt ausgegrauter Bedienelemente,
+die ohnehin nichts tun.
+
 ## 1.9.2
 
 **Beobachten heißt sehen, was ich getan hätte.** Auch ein Gerät, das du mir
